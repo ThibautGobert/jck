@@ -3,6 +3,9 @@
  * to our Laravel back-end. This library automatically handles sending the
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
+if( import.meta.env.APP_ENV === 'production') {
+    window.CESIUM_BASE_URL = import.meta.env.VITE_APP_URL
+}
 
 import axios from 'axios';
 window.axios = axios;
@@ -16,8 +19,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
  */
 
 import Echo from 'laravel-echo';
-import * as Cesium from "cesium";
-window.Cesium = Cesium
+
 
 import Pusher from 'pusher-js';
 window.Pusher = Pusher;
