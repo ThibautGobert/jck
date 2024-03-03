@@ -11,6 +11,8 @@ export default defineConfig({
             refresh: true,
         }),
         react(),
-        cesium()
+        cesium({
+            rebuildCesium: true
+        }),
     ],
 });
