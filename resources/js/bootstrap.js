@@ -4,9 +4,11 @@
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 if( import.meta.env.APP_ENV === 'production') {
+
     window.CESIUM_BASE_URL = import.meta.env.VITE_APP_URL
 }
-
+import * as Cesium from "cesium";
+window.Cesium = Cesium
 import axios from 'axios';
 window.axios = axios;
 
